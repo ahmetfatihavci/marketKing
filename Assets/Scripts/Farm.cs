@@ -1,20 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using Bases;
+using Interfaces;
+using Models;
 using UnityEngine;
 
-public class Farm : BaseMonoBehaviour
+public class Farm : Producer
 {
-    public Models.FarmModel farmModel;
-    // Start is called before the first frame update
-    void Start()
+    public FarmModel farmModel;
+    [SerializeField] private int _activeProductCount;
+
+    public override void Produce()
     {
-        Invoke("Call",5);
+        if (_activeProductCount < farmModel.productCapacity)
+        {
+            _activeProductCount++;
+           GameObject createdProduct = Instantiate(farmModel.product.productPrefab,transform);
+           createdProduct.name = $"Product{_activeProductCount}";
+        }
     }
 
-    public void Call()
-    {
-        NotificationCenter.instance.PostNotification(this,Constant.NotificationType.FarmReady,$"{farmModel.farmName} is ready !");
-        Invoke("Call",5);
-    }
 }
