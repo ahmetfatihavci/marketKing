@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1080d65857d88406ea709d55ec12cebc, type: 3}
-  m_Name: Product
+  m_Name: ProductTomato
   m_EditorClassIdentifier: 
   productName: Tomato
   productPrefab: {fileID: 5172409713644882715, guid: 57588f6a3ced7401295d5a8ab374c7f5,

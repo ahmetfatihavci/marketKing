@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Bases;
 using Interfaces;
 using Models;
@@ -7,16 +9,22 @@ using UnityEngine;
 public class Farm : Producer
 {
     public FarmModel farmModel;
-    [SerializeField] private int _activeProductCount;
+
 
     public override void Produce()
     {
-        if (_activeProductCount < farmModel.productCapacity)
+        if (products.Count < farmModel.productCapacity)
         {
-            _activeProductCount++;
-           GameObject createdProduct = Instantiate(farmModel.product.productPrefab,transform);
-           createdProduct.name = $"Product{_activeProductCount}";
+            GameObject createdProduct = Instantiate(farmModel.product.productPrefab, transform);
+            products.Add(createdProduct);
+            createdProduct.name = $"{farmModel.product.productName}";
+            NotificationCenter.instance.PostNotification(this,Constant.NotificationType.ProductCreated);
         }
     }
 
+    public GameObject GetLastProductAndRemove()
+    {
+        return products.RemoveLast();
+    }
+    
 }

@@ -6,7 +6,7 @@ public class Constant : MonoBehaviour
 {
     public enum NotificationType
     {
-        FarmReady
+        ProductCreated
     }
     
     

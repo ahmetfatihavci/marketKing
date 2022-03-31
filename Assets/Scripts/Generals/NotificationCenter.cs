@@ -106,9 +106,6 @@ public class NotificationCenter : Singleton<NotificationCenter>
             return;
         }
 
-        Dictionary<int, int> asd = new Dictionary<int, int>();
-
-
         var notifyList = _notifications[not.Type];
         if (notifyList == null || notifyList.Count == 0)
         {
