@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1080d65857d88406ea709d55ec12cebc, type: 3}
-  m_Name: ProductTomato
+  m_Name: ProductEgg
   m_EditorClassIdentifier: 
-  productId: 1
-  productName: Tomato
-  productPrefab: {fileID: 5172409713644882715, guid: 57588f6a3ced7401295d5a8ab374c7f5,
+  productId: 2
+  productName: Egg
+  productPrefab: {fileID: 5172409713644882715, guid: d2d8b67a1db43439cbcd62546f789e64,
     type: 3}
-  productPrice: 10
-  productType: 2
+  productPrice: 15
+  productType: 1

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1080d65857d88406ea709d55ec12cebc, type: 3}
   m_Name: ProductMelon
   m_EditorClassIdentifier: 
+  productId: 2
   productName: Melon
   productPrefab: {fileID: 5172409713644882715, guid: 06738649cc23046cea3cafab130efe84,
     type: 3}
+  productPrice: 20

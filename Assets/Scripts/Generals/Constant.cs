@@ -8,6 +8,13 @@ public class Constant : MonoBehaviour
     {
         ProductCreated
     }
+
+    public enum ProductType
+    {
+        Melon,
+        Egg,
+        Tomato
+    }
     
     
 }
