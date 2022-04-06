@@ -168,12 +168,12 @@ PrefabInstance:
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 960
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 645
+      value: 1011.3115
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 73706967}
   - component: {fileID: 73706966}
   - component: {fileID: 73706965}
+  - component: {fileID: 73706968}
   - component: {fileID: 73706963}
   m_Layer: 0
   m_Name: Farm2
@@ -302,12 +303,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   produceFrequency: 1
-  giveFrequency: 0.1
-  products: []
   farmModel:
     id: 1
     farmName: Farm2
-    productCapacity: 5
+    productCapacity: 1
     farmPrice: 0
     product: {fileID: 11400000, guid: cf425400240d14c869529f29acf85cee, type: 2}
 --- !u!23 &73706965
@@ -375,6 +374,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &73706968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73706962}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 0.1, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &224002464
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,28 +499,15 @@ GameObject:
   - component: {fileID: 249947797}
   - component: {fileID: 249947796}
   - component: {fileID: 249947795}
-  - component: {fileID: 249947794}
+  - component: {fileID: 249947799}
+  - component: {fileID: 249947798}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: TomatoPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &249947794
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249947793}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &249947795
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -567,13 +566,39 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249947793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.41, y: 0, z: 18.99}
+  m_LocalPosition: {x: -4.44, y: 1.11, z: 11.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249947798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249947793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc90ffd6e87d43e98d14380d04ed89b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productType: 2
+--- !u!65 &249947799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249947793}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 0.24581921, z: 5}
+  m_Center: {x: 0, y: -0.92709035, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,12 +932,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7343c59700b4bababfde8cfbb73f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _activeProducer: {fileID: 0}
   _joystick: {fileID: 34332453}
-  _currentSpeed: 20
+  _currentSpeed: 25
   products: []
   stackTransform: {fileID: 880130465}
-  lastStackTransform: {fileID: 0}
-  maxCapacity: 10
+  lastStackPosition: {x: 0, y: 0, z: 0}
+  maxCapacity: 6
+  onFarm: 0
 --- !u!23 &525722537
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -971,7 +998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525722534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0.97, z: 11.35}
+  m_LocalPosition: {x: -2.44, y: 0.97, z: 4.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1198,6 +1225,7 @@ GameObject:
   - component: {fileID: 959344149}
   - component: {fileID: 959344148}
   - component: {fileID: 959344147}
+  - component: {fileID: 959344150}
   - component: {fileID: 959344145}
   m_Layer: 0
   m_Name: Farm1
@@ -1220,12 +1248,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   produceFrequency: 1
-  giveFrequency: 2
-  products: []
   farmModel:
     id: 0
     farmName: Farm1
-    productCapacity: 3
+    productCapacity: 1
     farmPrice: 0
     product: {fileID: 11400000, guid: 4bd3b5a7382fd4b8c8ede1a4fa02f677, type: 2}
 --- !u!23 &959344147
@@ -1286,13 +1312,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959344144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.78, y: 0.37, z: 4.97}
+  m_LocalPosition: {x: 3.85, y: 0.52, z: 4.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &959344150
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959344144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 0.1, z: 4}
+  m_Center: {x: 0, y: -0.42593288, z: 0}
 --- !u!1 &1115035867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,6 +1440,7 @@ GameObject:
   - component: {fileID: 1140853585}
   - component: {fileID: 1140853584}
   - component: {fileID: 1140853583}
+  - component: {fileID: 1140853586}
   - component: {fileID: 1140853581}
   m_Layer: 0
   m_Name: Farm3
@@ -1423,8 +1463,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   produceFrequency: 4
-  giveFrequency: 0.5
-  products: []
+  farmModel:
+    id: 2
+    farmName: Farm3
+    productCapacity: 3
+    farmPrice: 0
+    product: {fileID: 11400000, guid: 95560c1fcd0d44923a0e1a0fe42c24e1, type: 2}
   farmModel:
     id: 2
     farmName: Farm3
@@ -1496,6 +1540,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1140853586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140853580}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 0.1, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!224 &1501462333 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
